@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
-
+import { AiFillGithub } from "react-icons/ai";
+import {BsTwitter} from "react-icons/bs";
 function App() {
   const colors = [
     "#F8B195", // Sandy Brown
@@ -37,9 +38,13 @@ function App() {
       <div className="w-1/2 flex flex-col items-center gap-4">
         <div className="bg-white w-full p-2 rounded-md shadow-md flex flex-col">
           <div className="flex flex-row w-full justify-between">
-            <div className="flex flex-row w-1/5 justify-between">
-              <button onClick={changeColor} className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
-              <button onClick={changeColor} className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
+            <div className="flex flex-row w-1/6 justify-between">
+              <a href="https://github.com/SudhanshuShrivastava04" className="p-2 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
+                <AiFillGithub className="w-full h-full" />
+              </a>
+              <a href="twitter.com/intent/tweet" target="_blank" className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
+                <BsTwitter className="w-full h-full" />
+              </a>
             </div>
             <button onClick={changeColor} className="p-4 rounded-md w-1/5 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
           </div>
