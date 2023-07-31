@@ -1,47 +1,44 @@
 import "./App.css";
 import React, { useState } from "react";
 
-const backgroundColors = [
-  "#E57373",
-  "#BA68C8",
-  "#64B5F6",
-  "#FFD54F",
-  "#81C784",
-  "#FF8A65",
-  "#F06292",
-  "#7986CB",
-  "#4DB6AC",
-  "#FFB74D",
-  "#A1887F",
-  "#90A4AE",
-  "#FFAB91",
-  "#9575CD",
-  "#4DD0E1",
-  "#FFCC80",
-  "#AED581",
-  "#DCE775",
-  "#BCAAA4",
-  "#E1BEE7",
-];
 function App() {
-  const [selectedColor, setSelectedColor] = useState(0);
-  const handleChangeColor = () => {
-    const nextColor = (selectedColor + 1) % selectedColor.length;
-    setSelectedColor(nextColor);
+  const colors = [
+    "#F8B195", // Sandy Brown
+    "#F67280", // Light Coral
+    "#C06C84", // Thistle
+    "#6C5B7B", // Royal Purple
+    "#355C7D", // Dark Slate Blue
+    "#99B898", // Opal
+    "#FECEAB", // Pale Orange
+    "#FF847C", // Salmon Pink
+    "#E84A5F", // Watermelon
+    "#2A363B", // Gunmetal
+    "#F9EBEA", // Misty Rose
+    "#D4E6F1", // Alice Blue
+    "#ABB7B7", // Platinum
+    "#6C757D", // Slate Gray
+    "#F2D7EE", // Lavender Pink
+    "#FFD9C4", // Peach Puff
+    "#B4CCB9", // Light Moss Green
+    "#F3E0E0", // Almond
+    "#5E6472", // Raisin Black
+    "#AAB2B4"  // Pastel Gray
+  ];
+
+  const [bgColorIndex, setBgColorIndex] = useState(0);
+
+  const changeColor = () => {
+    const nextColorIndex = (bgColorIndex + 1) % colors.length;
+    setBgColorIndex(nextColorIndex);
   };
 
   return (
-    <div
-      className="grid place-items-center w-full h-[100vh]"
-      style={{ backgroundColor: backgroundColors[selectedColor] }}
-    >
-      <div className="w-1/2 flex flex-col items-center gap-3">
-        <div className="flex flex-col w-full p-10 bg-white rounded-md">
-          <button onClick={handleChangeColor}>New</button>
+    <div className="grid place-items-center w-full h-[100vh]" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
+      <div>
+        <div className="bg-white w-1/2 p-2 rounded-md shadow-md flex flex-col">
+          <button onClick={changeColor} className="p-4 rounded-md w-1/5 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
         </div>
-        <p className="text-center text-white font-normal text-lg">
-          By Sudhanshu
-        </p>
+        <p>By Sudhanshu</p>
       </div>
     </div>
   );
