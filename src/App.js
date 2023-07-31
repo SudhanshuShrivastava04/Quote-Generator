@@ -34,11 +34,17 @@ function App() {
 
   return (
     <div className="grid place-items-center w-full h-[100vh]" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
-      <div>
-        <div className="bg-white w-1/2 p-2 rounded-md shadow-md flex flex-col">
-          <button onClick={changeColor} className="p-4 rounded-md w-1/5 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
+      <div className="w-1/2 flex flex-col items-center gap-4">
+        <div className="bg-white w-full p-2 rounded-md shadow-md flex flex-col">
+          <div className="flex flex-row w-full justify-between">
+            <div className="flex flex-row w-1/5 justify-between">
+              <button onClick={changeColor} className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
+              <button onClick={changeColor} className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
+            </div>
+            <button onClick={changeColor} className="p-4 rounded-md w-1/5 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
+          </div>
         </div>
-        <p>By Sudhanshu</p>
+        <p className="text-white text-lg font-semibold">By Sudhanshu</p>
       </div>
     </div>
   );
