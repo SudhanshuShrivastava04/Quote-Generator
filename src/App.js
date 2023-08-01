@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { ImQuotesLeft } from "react-icons/im";
+
+function tweetQuote(quote){
+  const tweetText = encodeURIComponent(quote);
+  const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+  window.open(tweetUrl, "_blank");
+}
 function App() {
   const colors = [
     "#F8B195", // Sandy Brown
@@ -52,23 +58,23 @@ function App() {
   };
 
   return (
-    <div className="grid place-items-center w-full h-[100vh]" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
+    <div className="grid place-items-center w-full h-[100vh]" style={{ background: colors[bgColorIndex], transition: "all 0.8s" }}>
       <div className="w-1/2 flex flex-col items-center gap-4">
-        <div className="bg-white w-full p-2 rounded-md shadow-md flex flex-col gap-10">
+        <div className="bg-white w-full p-2 rounded-md shadow-md flex flex-col gap-10 transition-all duration-700">
           <div className="w-full mt-5 flex justify-center">
-            <span className="inline w-fit" style={{ color: colors[bgColorIndex], transition: "all 0.5s" }}><ImQuotesLeft /></span>
-            <h1 className="text-3xl w-fit inline font-bold font-serif text-center" style={{ color: colors[bgColorIndex], transition: "all 0.5s" }}>{Quotes[quote]}</h1>
+            <span className="inline w-fit" style={{ color: colors[bgColorIndex], transition: "all 0.8s" }}><ImQuotesLeft /></span>
+            <h1 className="text-3xl w-fit inline font-bold font-serif text-center" style={{ color: colors[bgColorIndex], transition: "all 0.8s" }}>{Quotes[quote]}</h1>
           </div>
           <div className="flex flex-row w-full justify-between">
             <div className="flex flex-row w-1/6 justify-between">
-              <a href="https://github.com/SudhanshuShrivastava04" className="p-2 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
+              <a href="https://github.com/SudhanshuShrivastava04" className="p-2 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.8s" }}>
                 <AiFillGithub className="w-full h-full" />
               </a>
-              <a href="twitter.com/intent/tweet" target="_blank" className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>
+              <button onClick={() => tweetQuote(Quotes[quote])} className="p-4 rounded-md w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.8s" }}>
                 <BsTwitter className="w-full h-full" />
-              </a>
+              </button>
             </div>
-            <button onClick={change} className="p-4 rounded-md w-1/5 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.5s" }}>New</button>
+            <button onClick={change} className="p-4 rounded-md w-1/5 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.8s" }}>New</button>
           </div>
         </div>
         <p className="text-white text-lg font-semibold">By Sudhanshu</p>
