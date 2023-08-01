@@ -66,7 +66,7 @@ function App() {
             <h1 className="text-3xl w-fit inline font-bold font-serif text-center" style={{ color: colors[bgColorIndex], transition: "all 0.8s" }}>{Quotes[quote]}</h1>
           </div>
           <div className="flex flex-row w-full justify-between">
-            <div className="flex flex-row w-1/6 justify-between">
+            <div className="flex flex-row w-1/6 justify-between gap-5">
               <a href="https://github.com/SudhanshuShrivastava04" className="p-2 rounded-md relative w-1/8 text-xl font-semibold text-white" style={{ backgroundColor: colors[bgColorIndex], transition: "all 0.8s" }}>
                 <AiFillGithub className="w-full h-full" />
               </a>
